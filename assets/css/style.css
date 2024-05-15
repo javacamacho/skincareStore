@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    grid-template-areas: 
+    'header'
+    'filtro'
+    'main'
+    'paginador'
+    'footer'
+    ;
+    grid-template-columns: 1fr;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    background-color: #f4f4f6;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h3, h2, a, footer, .filtro, menu {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo_img {
+    width: 60px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+i {
+    padding-right: 15px;
+    font-size: 20px;
+}
+
+.filtro {
+    grid-area: filtro;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 9vh;
+    gap: 5px;
+}
+
+select {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    width: 250px;
+}
+
+menu {
+    display: none;
+}
+
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 63vh;
+    padding-top: 20px;
+    gap: 50px;
+    overflow-y: auto;
+}
+
+.card {
+    height: 450px;
+}
+
+.card_img {
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 250px;
+    margin-bottom: 10px;
+}
+
+.boton {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.btn {
+    background-color: #6ec2ed;
+    color: white;
+    width: 150px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.paginador {
+    grid-area: paginador;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.paginador a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: 1px solid gray;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #e8e7e7;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 576px) {
+
+    body {
+        display: grid;
+        grid-template-areas: 
+        'header filtro'
+        'menu main'
+        'footer paginador'
+        ;
+        grid-template-columns: 1fr 5fr;
+        grid-template-rows: 0.5fr 7fr 0.5fr;
+    }
+
+    header h2 {
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    menu {
+        background-color: #f4f4f6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 40px;
+        height: 72vh;
+    }
+
+    menu h3 {
+        font-weight: 400;
+        padding: 4px;
+    }
+
+    .fa-bars {
+        display: none;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 10px;
+        height: 75vh;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 280px;
+    }
+    
+    .card_img {
+        border: 1px solid gray;
+        border-radius: 10px;
+        width: 200px;
+        height: 150px;
+        object-fit: contain;
+        margin-bottom: 10px;
+    }
+    
+    .boton {
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+    }
+    
+    .btn {
+        background-color: #6ec2ed;
+        color: white;
+        width: 150px;
+        text-align: center;
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+    footer {
+        text-align: center;
+        height: 11vh;
+    }
+}
